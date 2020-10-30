@@ -1,0 +1,83 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{neurips_2020_poster}
+
+\usepackage{ragged2e}
+\usepackage{svg} 
+\usepackage{amsmath,amssymb,amsfonts,nicefrac}
+\usepackage{helvet}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usefonttheme[onlymath]{serif}
+
+% set colors for itemize/enumerate
+\setbeamercolor{item}{fg=black}
+\setbeamercolor{item projected}{fg=white,bg=black}
+
+% set colors for blocks
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+
+% set some beamer theme options
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{blocks}[width=0.0]
+\beamertemplatenavigationsymbolsempty
+
+% set bibliography style
+\setbeamertemplate{bibliography item}[text]
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+\setbeamercolor{bibliography entry author}{fg=black,bg=white}
+\setbeamercolor{bibliography item}{fg=black,bg=white}
+
+% font size
+\renewcommand{\normalsize}{\@setfontsize\normalsiz{21}{29.5}}
+\renewcommand{\small}{\@setfontsize\small{23}{27.6}}
+\renewcommand{\footnotesize}{\@setfontsize\footnotesize{19}{21}}
+\renewcommand{\scriptsize}{\@setfontsize\scriptsize{14.5}{17}}
+\renewcommand{\tiny}{\@setfontsize\tiny{14}{16.5}}
+\renewcommand{\large}{\@setfontsize\large{23}{31.5}}
+\renewcommand{\Large}{\@setfontsize\Large{34}{51}}
+\renewcommand{\LARGE}{\@setfontsize\LARGE{41}{61}}
+\renewcommand{\huge}{\@setfontsize\huge{43.5}{63}}
+\renewcommand{\Huge}{\@setfontsize\Huge{55}{80}}
+
+% neurips standard page size
+\geometry{paperwidth=36in,paperheight=24in,margin=1in}
+
+
+% build title
+\setbeamertemplate{headline}{
+\begin{beamercolorbox}[wd=\paperwidth,ht=1in,dp=1.3in,center]{white}
+\begin{columns}
+    \begin{column}{18in}
+        \Huge{\inserttitle}
+    \end{column}
+    \begin{column}{8in}
+        \LARGE{\insertauthor} \\
+        \Large{\insertinstitute}
+    \end{column}
+    \begin{column}{13.33cm}
+        \includesvg[width=\columnwidth]{logo}
+    \end{column}
+\end{columns}
+\end{beamercolorbox}
+}
+
+% Block definition
+\setbeamertemplate{block begin}
+{
+    \begin{beamercolorbox}[wd=\columnwidth]{block title}
+        \Large\insertblocktitle
+    \end{beamercolorbox}
+    \vspace{0.3in}
+    \begin{beamercolorbox}[wd=\columnwidth]{block body}
+    \justifying
+}
+
+\setbeamertemplate{block end}
+{
+    \end{beamercolorbox}
+    \vspace{0.7in}
+}
+
